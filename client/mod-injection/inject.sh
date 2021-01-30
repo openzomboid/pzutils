@@ -77,7 +77,7 @@ case "$1" in
     clear)
         init && clear;;
     version|v|--version|-v)
-        echo "$0 version $VERSION";;
+        echo "$0 version ${VERSION}";;
     help|h|--help|-h)
         echo "NAME:"
         echo "   ${0##*/} script allows you to inject local mod to the Project Zomboid server. You must be an admin on the server."
@@ -86,7 +86,7 @@ case "$1" in
         echo "   $0 command [arguments...]"
         echo
         echo "VERSION:"
-        echo "   $VERSION"
+        echo "   ${VERSION}"
         echo
         echo "Description:"
         echo "   This is not the cheat. You must be an admin on the server."
@@ -103,5 +103,5 @@ case "$1" in
         echo "   --version, -v  print the version"
         echo
         echo "COPYRIGHT:"
-        echo "   Copyright (c) $YEAR $AUTHOR"
+        echo "   Copyright (c) $YEAR ${AUTHOR}"
 esac
