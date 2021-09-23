@@ -7,3 +7,5 @@
 !/client/mod-injection/testdata/server/projectzomboid/.gitkeep
 
 README-local.md
+
+.env
