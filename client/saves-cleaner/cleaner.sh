@@ -12,11 +12,11 @@ fi
 
 if [[ -z ${DIR_PZ_SAVES} ]]; then DIR_PZ_SAVES=~/"Zomboid/Saves/Multiplayer"; fi
 
-if [[ -z ${SERVER_IP} ]]; then SERVER_IP="116.202.17.49"; fi
-if [[ -z ${SERVER_PORT} ]]; then SERVER_PORT="16261"; fi
 
 function init() {
   [[ -d "${DIR_PZ_SAVES}" ]] || { echo "No saves directory found"; return 1; }
+  if [[ -z ${SERVER_IP} ]]; then echo "Server ip is not set"; return 1; fi
+  if [[ -z ${SERVER_PORT} ]]; then echo "Server port is not set"; return 1; fi
   if [[ -z "${USERNAME}" ]]; then echo "Username is not set"; return 1; fi
 
   DIR_SAVE="${DIR_PZ_SAVES}/${SERVER_IP}_${SERVER_PORT}_$(echo -n "${USERNAME}" | md5sum | awk '{print $1}')"
