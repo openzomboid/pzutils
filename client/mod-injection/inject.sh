@@ -7,10 +7,10 @@ AUTHOR="Pavel Korotkiy (outdead)"
 BASEDIR=$(dirname "$0")
 
 # DIR_PZ_STEAM is the path to installed Project Zomboid.
-if [[ -z ${DIR_PZ_STEAM} ]]; then DIR_PZ_STEAM=~/".local/share/Steam/steamapps/common/ProjectZomboid"; fi
+[[ -z ${DIR_PZ_STEAM} ]] && DIR_PZ_STEAM=~/".local/share/Steam/steamapps/common/ProjectZomboid"
 
 # DIR_MODS_STORED is the path to local saved mods.
-if [[ -z ${DIR_MODS_STORED} ]]; then DIR_MODS_STORED="${BASEDIR}/mods"; fi
+[[ -z ${DIR_MODS_STORED} ]] && DIR_MODS_STORED="${BASEDIR}/mods"
 
 function init() {
     [[ -d "${DIR_PZ_STEAM}" ]] || { echo "Project Zomboid is not installed"; return 1; }
@@ -22,7 +22,7 @@ function init() {
 # up injects mod with name $1.
 function up() {
     local mod_name="$1"
-    if [[ -z "${mod_name}" ]]; then echo "mod name is not set"; return 1; fi;
+    [[ -z "${mod_name}" ]] && { echo "mod name is not set"; return 1; }
 
     local mod_path="${DIR_MODS_STORED}/${mod_name}"
     [[ -d "${mod_path}" ]] || { echo "mod to inject does not exists"; return 1; }
@@ -47,7 +47,7 @@ function up() {
 # down deletes injected mod with name $1.
 function down() {
     local mod_name="$1"
-    if [[ -z "${mod_name}" ]]; then echo "mod name is not set"; return 1; fi;
+    [[ -z "${mod_name}" ]] && { echo "mod name is not set"; return 1; }
 
     [[ -d "${DIR_MODS_STORED}/${mod_name}/media/lua/shared" ]] && rm -r "${DIR_PZ_MEDIA}/lua/shared/mods/${mod_name}"
     [[ -d "${DIR_MODS_STORED}/${mod_name}/media/lua/server" ]] && rm -r "${DIR_PZ_MEDIA}/lua/server/mods/${mod_name}"

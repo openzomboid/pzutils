@@ -1,11 +1,6 @@
 .idea/
 .vscode/
 
-/client/mod-injection/mods/*
-!/client/mod-injection/mods/testmod/
-/client/mod-injection/testdata/server/projectzomboid/*
-!/client/mod-injection/testdata/server/projectzomboid/.gitkeep
-
 README-local.md
 
 .env

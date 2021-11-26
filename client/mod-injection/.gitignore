@@ -1,0 +1,5 @@
+mods/*
+!mods/testmod/
+
+testdata/server/projectzomboid/*
+!testdata/server/projectzomboid/.gitkeep

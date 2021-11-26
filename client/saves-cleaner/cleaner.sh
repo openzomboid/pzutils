@@ -1,23 +1,20 @@
 #!/usr/bin/env bash
 
-VERSION="0.1.0"
+VERSION="0.1.1"
 YEAR="2021"
 AUTHOR="Pavel Korotkiy (outdead)"
 
 BASEDIR=$(dirname "$0")
 
-if [ -f "$BASEDIR"/.env ]; then
-  export $(cat "$BASEDIR"/.env | sed 's/#.*//g' | xargs)
-fi
+[[ -f "${BASEDIR}"/.env ]] &&  export $(cat "${BASEDIR}"/.env | sed 's/#.*//g' | xargs)
 
-if [[ -z ${DIR_PZ_SAVES} ]]; then DIR_PZ_SAVES=~/"Zomboid/Saves/Multiplayer"; fi
-
+[[ -z "${DIR_PZ_SAVES}" ]] && DIR_PZ_SAVES=~/"Zomboid/Saves/Multiplayer"
 
 function init() {
   [[ -d "${DIR_PZ_SAVES}" ]] || { echo "No saves directory found"; return 1; }
-  if [[ -z ${SERVER_IP} ]]; then echo "Server ip is not set"; return 1; fi
-  if [[ -z ${SERVER_PORT} ]]; then echo "Server port is not set"; return 1; fi
-  if [[ -z "${USERNAME}" ]]; then echo "Username is not set"; return 1; fi
+  [[ -z "${SERVER_IP}" ]] && { echo "Server ip is not set"; return 1; }
+  [[ -z "${SERVER_PORT}" ]] && { echo "Server port is not set"; return 1; }
+  [[ -z "${USERNAME}" ]] && { echo "Username is not set"; return 1; }
 
   DIR_SAVE="${DIR_PZ_SAVES}/${SERVER_IP}_${SERVER_PORT}_$(echo -n "${USERNAME}" | md5sum | awk '{print $1}')"
 
