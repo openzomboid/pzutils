@@ -96,9 +96,9 @@ function Wipezoner.ISInventoryPaneContextMenu:onWriteSomethingClick(button)
 
             message = message .. ' {'
                 .. '"enable":true,'
-                ..'"city":"' .. city .. '",'
-                ..'"name":"' .. name .. '",'
-                ..'"area":{"top":"' .. Wipezoner.ISInventoryPaneContextMenu.Top .. '","bottom":"' .. Wipezoner.getBottom(player) .. '"}'
+                .. '"city":"' .. city .. '",'
+                .. '"name":"' .. name .. '",'
+                .. '"area":{"top":"' .. top .. '","bottom":"' .. bottom .. '"}'
             ..'}'
 
             local location = Wipezoner.getLocation(player);
@@ -110,8 +110,6 @@ function Wipezoner.ISInventoryPaneContextMenu:onWriteSomethingClick(button)
         end
     end
 end
-
-
 
 ISInventoryTransferAction.perform = Wipezoner.ISInventoryTransferAction.perform;
 ISInventoryPaneContextMenu.onWriteSomething = Wipezoner.ISInventoryPaneContextMenu.onWriteSomething;
