@@ -4,6 +4,8 @@
 -- that can be found in the LICENSE file.
 --
 
+Version = "0.1.0"
+
 Wipezoner = {
     ISInventoryTransferAction = {
         Original = {
