@@ -104,7 +104,7 @@ function Wipezoner.ISInventoryPaneContextMenu:onWriteSomethingClick(button)
             local location = Wipezoner.getLocation(player);
             message = message .. " (" .. location .. ")"
 
-            writeLog("pzlsm", message);
+            LogExtenderClient.writeLog("pzlsm", message);
             player:Say("set wipezone success");
             Wipezoner.ISInventoryPaneContextMenu.Top = ""
         end
