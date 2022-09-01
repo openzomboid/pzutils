@@ -32,7 +32,4 @@ SERVER_PASSWORD=${SERVER_PASSWORD}
 DIR="${BASEDIR}/data/from/${SERVER_TYPE}/$(date +%Y-%m-%d_%H-%M-%S)"
 mkdir -p "${DIR}"
 
-#exp "${SERVER_PASSWORD}" scp -r -o 'IdentitiesOnly=yes' "${SERVER_USER}@${SERVER_IP}":/home/outdead/pz/content/gc.out "${DIR}/gc.out"
-#exp "${SERVER_PASSWORD}" scp -r -o 'IdentitiesOnly=yes' "${SERVER_USER}@${SERVER_IP}":/home/outdead/pz/content/Zomboid/logs.tar.gz "${DIR}/logs.tar.gz"
-exp "${SERVER_PASSWORD}" scp -r -o 'IdentitiesOnly=yes' "${SERVER_USER}@${SERVER_IP}":/home/outdead/pz/backups/copy/2/map_1027_1281.bin "${DIR}/map_1027_1281.bin"
-exp "${SERVER_PASSWORD}" scp -r -o 'IdentitiesOnly=yes' "${SERVER_USER}@${SERVER_IP}":/home/outdead/pz/backups/copy/2/map_1028_1281.bin "${DIR}/map_1028_1281.bin"
+exp "${SERVER_PASSWORD}" scp -r -o 'IdentitiesOnly=yes' "${SERVER_USER}@${SERVER_IP}":/home/outdead/pz/content/Zomboid/logs.tar.gz "${DIR}/logs.tar.gz"
