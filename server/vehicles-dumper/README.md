@@ -3,7 +3,7 @@ Vehicles Dumper dumps vehicles coordinates to file.
 
 ## Usage
 
-    python3 vehicles-dumper.py -s servertest -z /home/pk/Zomboid
+    python3 vehicles-dumper.py -s servertest -z /home/pzuser/Zomboid
 
 File `vehicles.txt` will be created on `Zomboid/Lua` folder with content:
 ```text
